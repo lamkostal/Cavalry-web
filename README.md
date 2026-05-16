@@ -114,6 +114,42 @@ The Cavalry Web Player package includes these essential files:
 4. Open a browser window and load [localhost:8000](http://localhost:8000)
 5. Try the 'Minimal Player' example, load a `.cv` scene file and use the playback controls.
 
+### Cloudflare Python Worker
+
+This repo includes a Cloudflare Python Worker configuration in `wrangler.jsonc`.
+
+Install the Python Worker tooling:
+
+```bash
+uv sync
+```
+
+Generate Worker types for editor autocomplete:
+
+```bash
+uv run pywrangler types
+```
+
+Run locally with Wrangler:
+
+```bash
+uv run pywrangler dev
+```
+
+Deploy to Cloudflare:
+
+```bash
+uv run pywrangler deploy
+```
+
+The Worker serves static files from the repository root and routes `/api/*` requests through `src/entry.py`. Example endpoints:
+
+```bash
+curl http://localhost:8787/api/hello
+curl --header "Content-Type: application/json" --request POST --data '{"name":"Python"}' http://localhost:8787/api/hello
+curl http://localhost:8787/api/env
+```
+
 ### Integration Example
 
 ```javascript

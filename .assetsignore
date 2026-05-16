@@ -1,0 +1,14 @@
+.git
+.gitignore
+.wrangler
+.assetsignore
+.dev.vars*
+.env*
+node_modules
+package.json
+package-lock.json
+pyproject.toml
+uv.lock
+src
+serve.py
+wrangler.jsonc
