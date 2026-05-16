@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Cavalry Shadow DOM Demo</title>
+		<link rel="stylesheet" href="../shared.css" />
+		<link rel="stylesheet" href="styles.css" />
+	</head>
+	<body>
+		<div class="container">
+			<div class="header">
+				<h1><a href="../">Demos</a> / Shadow DOM Demo</h1>
+				<p class="subtitle">Cavalry player encapsulated in Web Components</p>
+			</div>
+
+			<div class="wrapper">
+				<cavalry-shadow-player></cavalry-shadow-player>
+			</div>
+
+			<div class="about-section">
+				<h3>About this Demo</h3>
+				<p>
+					This demo showcases the Cavalry player running entirely within a
+					Shadow DOM, demonstrating complete encapsulation.
+				</p>
+				<p>
+					The canvas element is hidden inside the shadow root, and styles are
+					completely isolated from the main document. This is perfect for
+					widget/component-based embedding.
+				</p>
+				<p>
+					Open DevTools and inspect the &lt;cavalry-shadow-player&gt; element to
+					see the shadow DOM structure.
+				</p>
+			</div>
+		</div>
+
+		<script src="app.js" type="module"></script>
+	</body>
+</html>

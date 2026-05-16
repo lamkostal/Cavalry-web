@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Cavalry Interactivity Demo</title>
+		<link rel="stylesheet" href="../shared.css" />
+		<link rel="stylesheet" href="../cavalry-player.css" />
+		<link rel="stylesheet" href="styles.css" />
+	</head>
+	<body>
+		<div class="container">
+			<div class="header">
+				<h1><a href="../">Demos</a> / Interactivity Demo</h1>
+				<p class="subtitle">Click and drag to control the Falloff position</p>
+			</div>
+
+			<div id="player">
+				<div id="loading">
+					<div class="loading-spinner"></div>
+					Loading Cavalry Player...
+				</div>
+			</div>
+
+			<div class="info">
+				<label>Mouse Coordinates</label>
+				<div class="coordinate-display">
+					<div>
+						<strong>Canvas:</strong> <span id="canvasCoords">0, 0</span>
+					</div>
+					<div>
+						<strong>Cavalry:</strong> <span id="cavalryCoords">0, 0</span>
+					</div>
+				</div>
+				<label>Falloff Position</label>
+				<div class="coordinate-display">
+					<div>X: <span id="falloffX">0</span></div>
+					<div>Y: <span id="falloffY">0</span></div>
+				</div>
+			</div>
+
+			<div class="about-section">
+				<h3>About this Demo</h3>
+				<p>
+					This demo showcases interactive control of a Cavalry Scene through
+					mouse input. Click and drag on the canvas to move the Falloff
+					position.
+				</p>
+				<p>
+					The JavaScript app converts browser canvas coordinates to Cavalry's
+					Cartesian coordinate system and then updates the falloff position
+					attribute.
+				</p>
+			</div>
+		</div>
+
+		<script src="app.js" type="module"></script>
+	</body>
+</html>

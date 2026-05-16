@@ -1,0 +1,27 @@
+.inspector-info {
+	background: var(--bg-elevated);
+	border: 1px solid var(--border);
+	border-radius: var(--radius-sm);
+	padding: 12px;
+	font-family: 'SF Mono', 'Monaco', 'Consolas', monospace;
+	font-size: 13px;
+	color: var(--text-secondary);
+	line-height: 1.6;
+}
+
+.inspector-info strong {
+	color: var(--text-primary);
+}
+
+.inspector-info code {
+	background: var(--bg-base);
+	padding: 2px 6px;
+	border-radius: 4px;
+	font-size: 12px;
+	color: var(--brand-primary);
+}
+
+.wrapper {
+	position: relative;
+	min-height: 500px;
+}

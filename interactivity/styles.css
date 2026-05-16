@@ -1,0 +1,29 @@
+#canvas {
+	cursor: crosshair;
+}
+
+#canvas:active {
+	cursor: grabbing;
+}
+
+.coordinate-display {
+	background: var(--bg-elevated);
+	border: 1px solid var(--border);
+	border-radius: var(--radius-sm);
+	padding: 12px;
+	font-family: 'SF Mono', 'Monaco', 'Consolas', monospace;
+	font-size: 13px;
+	color: var(--text-secondary);
+}
+
+.coordinate-display strong {
+	color: var(--text-primary);
+}
+
+.coordinate-display div {
+	margin-bottom: 4px;
+}
+
+.coordinate-display div:last-child {
+	margin-bottom: 0;
+}
