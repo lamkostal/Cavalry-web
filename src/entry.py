@@ -3,6 +3,9 @@ from workers import WorkerEntrypoint, Response
 from hello import hello
 
 
+CAVALRY_DEMOS_PREFIX = "/cavalry-demos"
+
+
 class Default(WorkerEntrypoint):
     async def fetch(self, request):
         url = request.url
@@ -18,4 +21,9 @@ class Default(WorkerEntrypoint):
         if "/api/env" in url:
             return Response(self.env.API_HOST)
 
-        return await self.env.ASSETS.fetch(request)
+        response = await self.env.ASSETS.fetch(request)
+        if response.status != 404 or CAVALRY_DEMOS_PREFIX not in url:
+            return response
+
+        rewritten_url = url.replace(CAVALRY_DEMOS_PREFIX, "", 1)
+        return await self.env.ASSETS.fetch(rewritten_url)

@@ -156,11 +156,12 @@ curl http://localhost:8787/api/env
 
 ```javascript
 // Import the Cavalry module
-const CavalryModule = await import('/cavalry-demos/wasm-lib/CavalryWasm.js')
+const wasmBaseUrl = new URL('./wasm-lib/', import.meta.url)
+const CavalryModule = await import(new URL('CavalryWasm.js', wasmBaseUrl).href)
 
 // Initialise the module
 const Module = await CavalryModule.default({
-	locateFile: (path) => `/cavalry-demos/wasm-lib/${path}`,
+	locateFile: (path) => new URL(path, wasmBaseUrl).href,
 	canvas: document.getElementById('canvas'),
 })
 
