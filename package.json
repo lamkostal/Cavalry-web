@@ -1,0 +1,10 @@
+{
+  "name": "cavalry-web-player",
+  "private": true,
+  "scripts": {
+    "predeploy": "python -m pip install uv",
+    "deploy": "uv run pywrangler deploy",
+    "dev": "uv run pywrangler dev",
+    "types": "uv run pywrangler types"
+  }
+}

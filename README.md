@@ -142,6 +142,8 @@ Deploy to Cloudflare:
 uv run pywrangler deploy
 ```
 
+Use `uv run pywrangler deploy` or `npm run deploy` for Python Workers. Do not deploy this project with `npx wrangler deploy` directly, because that skips the Python package bundling step that provides the `workers` SDK.
+
 The Worker serves static files from the repository root and routes `/api/*` requests through `src/entry.py`. Example endpoints:
 
 ```bash
